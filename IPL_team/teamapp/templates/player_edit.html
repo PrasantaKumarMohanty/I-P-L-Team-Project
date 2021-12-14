@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<center>
+		<div class="Pl_hd"><h2>Edit Player Info. here...</h2></div>
+		<span class="e_nm">Player Name  &nbsp;-&nbsp; {{Player.p_name}}</span>
+		<form method="POST" action="/player_update/{{Player.id}}">
+				{% csrf_token %}
+		<table class="t1">
+			<tr>
+				<td>Player Name :</td>
+					<td><input type="text" name="p_name" value="{{Player.p_name}}"></td>
+			</tr>
+			<tr>
+				<td>Player Photo :</td>
+					<td><input type="file" name="p_photo" value="{{Player.p_photo}}"></td>
+			</tr>
+			
+			<tr>
+				<td>Price :</td>
+					<td><input type="text" name="p_price" value="{{Player.p_price}}"></td>
+			</tr>
+			<tr>
+				<td>Playing Status :</td>
+					<td><input type="text" name="p_play_status" value="{{Player.p_play_status}}"></td>
+			</tr>
+			<tr>
+				<td>Role :</td>
+					<td><input type="text" name="t_role" value="{{Player.t_role}}"></td>
+			</tr>
+		</table>
+		<div style="font-size: 25px">
+		{% if messages %}
+		{% for result in messages %}
+			<b style="color: #264d00;">{{result}}</b>
+		{% endfor %}
+		{% endif %}
+		</div>
+		<input class="sub-btn" type="submit" value="Update">
+	</form>
+	</center>
+	
+{% endblock content %}

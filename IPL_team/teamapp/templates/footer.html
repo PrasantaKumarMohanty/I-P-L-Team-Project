@@ -1,0 +1,126 @@
+{% load static %}
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* Sticky footer position and size
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 300px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+}
+
+/* Taller footer on small screens */
+@media (max-width: 567em) {
+    body {
+      margin-bottom: 350px;
+    }
+    .footer {
+      height: 300px;
+    }
+}
+
+/* Sticky footer style and color
+-------------------------------------------------- */
+footer {
+  padding-top: 30px;
+  background-color: navy;
+  color: #bbb;
+}
+
+footer a {
+  color: #999;
+  text-decoration:none;
+}
+
+footer a:hover, footer a:focus {
+  color: #aaa;
+  text-decoration:none;
+  border-bottom:1px dotted #999;
+}
+
+footer .form-control {
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
+    color: #d1d2d2;
+    padding: 0.7em 1em;
+}
+
+.col-6{
+  margin-left: 80px;
+  font-size: 25px;
+  font-family: bold;
+}
+
+</style>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+
+              <span class="nav-title"><img style="height: 47px; width: 108px;" src="{% static 'images/ipl-logo-new-old.png' %}">
+              </span>
+
+              <span class="nav-title"><img style="padding-right: 25px; height: 47px; width: 120px; float: right;" src="{% static 'images/BCCI_logo.jpg' %}">
+              </span>
+
+                <h2 style="text-align: center;">Indian Premier League (IPL)</h2>
+                <div style="margin: 30px;">
+                  <p>The Indian Premier League (IPL) is a professional Twenty20 cricket league, contested by ten teams based out of ten Indian cities. The league was founded by the Board of Control for Cricket in India (BCCI) in 2007. It is usually held between March and May of every year and has an exclusive window in the ICC Future Tours Programme.
+                    There have been fourteen seasons of the IPL tournament. The current IPL title holders are the Chennai Super Kings, winning the 2021 season.[10] The venue for the 2020 season was moved due to the COVID-19 pandemic and games were played in the United Arab Emirates.
+                  </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+
+                        <span style="padding-right: 150px;">
+                          <a href="https://en.wikipedia.org/wiki/Indian_Premier_League#History">History</a>
+                        </span>
+
+                        <span style="padding-right: 150px;">
+                          <a href="https://www.iplt20.com/">Website</a>
+                        </span>
+
+                        <span style="padding-right: 150px;">
+                          <a href="https://www.iplt20.com/about/about-us">About</a>
+                        </span>
+
+                        <span style="padding-right: 150px;">
+                          <a href="https://www.iplt20.com/video/all">Videos</a>
+                        </span>
+                        
+                          <span><a href="https://blog.betway.com/cricket/ipl-explained-everything-you-need-to-know/">IPL cricket explained</a></span>
+                       
+                      </table>
+                        
+                    </div>
+                    
+                </div>
+                
+                <br>
+            </div>
+            
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>

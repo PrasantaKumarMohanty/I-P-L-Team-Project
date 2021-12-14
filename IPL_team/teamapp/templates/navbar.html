@@ -1,0 +1,186 @@
+{% load static %}
+<style type="text/css">
+  * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 65px;
+  width: 100%;
+  background-color: navy;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 25px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  padding-top: 8px;
+
+}
+
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: #8000ff;
+  ss
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* Search bar */
+.topnav {
+  float: right;
+  overflow: hidden;
+  padding-top: 3px;
+  margin-left: 9px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+#button-submit {
+  background: #e9e9e9;
+  font-size: 12px;
+  color: #80ffff;
+  margin-right: 8px;
+  background-color: #004d00;
+  border-radius: 50px 20px;
+  font-family: Segoe Print;
+}
+
+#query{
+  background-color: #80ffff;
+  border-radius: 20px;
+  font-size: 12px;
+  border-radius: 50px 20px;
+}
+
+::placeholder {
+  color: #ff0000;
+  text-align: center;
+  font-family: Segoe Print;
+  font-size: 15px;
+}
+</style>
+
+
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+
+    <div class="nav-title"><img style="height: 47px; width: 120px;" src="{% static 'images/ipl-logo-new-old.png' %}">
+       <span style="padding-left: 15px; font-family: Tahoma, Verdana, sans-serif; color: #FF9933">Indian</span>
+       <span style="color: #FFFFFF; font-family: Tahoma, Verdana, sans-serif;">Premier</span>
+       <span style="color: #138808; font-family: Tahoma, Verdana, sans-serif;">League</span> 
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+ 
+  <div class="nav-links">
+    
+      <span class="topnav">
+        <form method="get" action="/search">
+        <input name="query" id="query" type="text" placeholder="Search here..">
+        <input id='button-submit' type='submit' value='Search'/>
+        </form>
+      </span>
+    <a style="font-size: 20px; font-family: cursive;" href="{% url 'teamdisplay' %}">Home</a>
+    <a style="font-size: 20px; font-family: cursive;" href="{% url 'teamInsert' %}">New Team</a>
+    <a style="font-size: 20px; font-family: cursive;" href="{% url 'addplayer' %}">New Player</a>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<div class="main">
+	  <ul class="cards">
+	  	{% for display in Team %}
+	    <li class="cards_item">
+	      <div class="card">
+	        <div class="card_image"><img src="{{display.t_icon}}"></div>
+	        <div class="card_content">
+	          <h2 style="color: #330033; font-size: 45px;" class="card_title">{{display.t_name}}</h2>
+	          <p style="color: #004d00; font-size: 25px" class="card_text">Total Player :{{display.t_player_count}}</p>
+	          <p style="color: #004d00; font-size: 25px" class="card_text">Championship won :{{display.t_won_count}}</p>
+	          <button class="btn card_btn">
+	          		<a href="detail/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">More Details</a>
+	          </button>
+
+	          <button class="btn card_btn">
+	          		<a href="edit/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">Edit</a>
+	          </button>
+
+	          <button class="btn card_btn">
+	          		<a href="delete/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">Delete</a>
+	          </button>
+	        </div>
+	      </div>
+	    </li>
+	    {% endfor %}
+	  </ul>
+	</div>
+
+{% endblock content %}
+
+
