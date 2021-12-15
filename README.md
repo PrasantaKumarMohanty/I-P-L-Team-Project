@@ -7,7 +7,7 @@ This "I P L Team Project" is developed by Prasanta Kumar Mohanty using Python wi
 
 ![Screenshot (300)](https://user-images.githubusercontent.com/92419941/146123679-15cf7837-063d-43a6-ab5d-a4989d5dc559.png)
 
-2. Add a team page -
+2. Add a new team page -
 
 ![Screenshot (292)](https://user-images.githubusercontent.com/92419941/146123939-ce75b72b-087b-4c8e-9341-7a0e666b27db.png)
 
